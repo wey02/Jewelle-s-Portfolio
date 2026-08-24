@@ -1,0 +1,6 @@
+{
+  "name": "Developer Portfolio",
+  "description": "A modern, responsive portfolio for a Full-Stack Developer specializing in AI-powered web applications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #FAFAFC;
+    color: #1E082A;
+    overflow-x: hidden;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Custom subtle futuristic rose-violet scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAFAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F0ABFC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D946EF;
+}
+
+/* Futuristic focus ring */
+*:focus-visible {
+  outline: 2px solid #D946EF;
+  outline-offset: 2px;
+}
