@@ -132,7 +132,7 @@ export const Projects: React.FC = () => {
 
                   <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-[#FDF4FF] text-[#A21CAF] border border-[#F0ABFC]">
                     
-                      Academic Project · Thesis
+                      {project.projectType}
                     </span>
                 </header>
 
