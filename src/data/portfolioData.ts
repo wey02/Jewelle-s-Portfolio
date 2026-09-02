@@ -9,6 +9,7 @@ const babybot3 = new URL('../assets/images/babybot3.jpg', import.meta.url).href;
 const ab1 = new URL('../assets/images/ab1.jpg', import.meta.url).href;
 const ab2 = new URL('../assets/images/ab2.jpg', import.meta.url).href;
 const ab3 = new URL('../assets/images/ab3.jpg', import.meta.url).href;
+const profileImg = new URL('../assets/images/Jew.jpg', import.meta.url).href;
 
 
 export const developerProfile: DeveloperProfile = {

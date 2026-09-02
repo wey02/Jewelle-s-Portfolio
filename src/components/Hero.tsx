@@ -12,6 +12,9 @@ import {
 } from 'lucide-react';
 import { developerProfile } from '../data/portfolioData';
 
+
+const profileImg = new URL('../assets/images/Jew.jpg', import.meta.url).href;
+
 interface HeroProps {
   onOpenResume: () => void;
 }
@@ -145,7 +148,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <div className="relative bg-white p-3 rounded-3xl border border-pink-200/90 shadow-[0_12px_45px_rgba(217,70,239,0.18)] overflow-hidden">
                 <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-pink-50">
                   <img
-                    src="/src/assets/images/Jew.jpg"
+                    src={profileImg}
                     alt="Jewelle - Professional Full-Stack & AI Systems Developer"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-500"
