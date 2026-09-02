@@ -59,38 +59,7 @@ export const Projects: React.FC = () => {
             </p>
           </div>
 
-          {/* Category Filter Tabs */}
-          <div className="flex items-center justify-center flex-wrap gap-2 pt-2">
-            {projectCategories.map((cat) => {
-              const count = cat.id === 'all' 
-                ? projectsData.length 
-                : projectsData.filter(p => p.category === cat.id).length;
-
-              const isActive = activeCategory === cat.id;
-
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id as ProjectCategory)}
-                  id={`filter-projects-${cat.id}`}
-                  className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-medium transition-all cursor-pointer ${
-                    isActive
-                      ? 'bg-gradient-to-r from-[#C026D3] via-[#EC4899] to-[#8B5CF6] text-white shadow-[0_0_15px_rgba(217,70,239,0.35)] font-semibold ring-2 ring-[#F0ABFC]'
-                      : 'bg-white text-slate-700 hover:text-[#C026D3] hover:bg-pink-50/50 border border-pink-200/80'
-                  }`}
-                >
-                  <span>{cat.label}</span>
-                  <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-full ${
-                    isActive
-                      ? 'bg-white/20 text-white font-bold'
-                      : 'bg-[#FDF4FF] text-[#A21CAF] font-semibold'
-                  }`}>
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+          
         </div>
 
         {/* Case Studies Alternating List */}
