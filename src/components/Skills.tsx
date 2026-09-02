@@ -53,8 +53,7 @@ export const Skills: React.FC = () => {
               Skills & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C026D3] via-[#D946EF] to-[#EC4899]">Engineering Stack</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-              Categorized by functional layers with focus on practical application in production environments — eliminating arbitrary percentage bars in favor of real-world competencies.
-            </p>
+              Technologies and tools I’ve applied across frontend, backend, databases, APIs, AI integration, and deployment.            </p>
           </div>
         </div>
 

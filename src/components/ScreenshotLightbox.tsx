@@ -180,8 +180,12 @@ export const ScreenshotLightbox: React.FC<ScreenshotLightboxProps> = ({
               </div>
 
               {/* High-Res View Area */}
-              <div className="p-4 sm:p-6 bg-white text-slate-800 min-h-[320px] sm:min-h-[420px]">
-                {renderHighResMock(projectId, currentScreenshot.id)}
+              <div className="flex min-h-[320px] items-center justify-center bg-white sm:min-h-[420px]">
+                <img
+                  src={currentScreenshot.imageUrl}
+                  alt={currentScreenshot.title || `${projectTitle} screenshot`}
+                  className="h-auto max-h-[65vh] w-full object-contain"
+                />
               </div>
             </div>
           </div>

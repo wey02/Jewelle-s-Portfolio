@@ -64,7 +64,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div className="p-4 rounded-xl bg-[#FDF2F8]/60 dark:bg-[#200A38]/70 border border-[#F472B6]/60 dark:border-[#4A1560] space-y-2">
             <h4 className="text-xs font-bold uppercase tracking-wider text-[#BE185D] dark:text-[#F472B6] font-mono flex items-center gap-1.5">
               <Wrench className="w-3.5 h-3.5 text-[#EC4899]" />
-              Architecture & What I Built
+              Architecture & What I Built and what it matters. 
             </h4>
             <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 leading-relaxed">
               {project.myRole}

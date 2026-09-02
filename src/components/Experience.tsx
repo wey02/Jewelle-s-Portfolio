@@ -81,17 +81,32 @@ export const Experience: React.FC = () => {
                 </div>
 
                 {/* Tech tags */}
-                <div className="pt-4 border-t border-pink-100 flex flex-wrap items-center gap-1.5">
-                  <span className="text-[11px] font-mono text-slate-400 mr-1">Stack:</span>
-                  {item.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-pink-50 text-[#A21CAF] border border-pink-200"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+                {item.tech && item.tech.length > 0 && (
+                  <div className="pt-4 border-t border-pink-100 flex flex-wrap items-center gap-1.5">
+                    <span className="text-[11px] font-mono text-slate-400 mr-1">Stack:</span>
+                    {item.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-pink-50 text-[#A21CAF] border border-pink-200"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {item.tools && item.tools.length > 0 && (
+                  <div className="pt-4 border-t border-pink-100 flex flex-wrap items-center gap-1.5">
+                    <span className="text-[11px] font-mono text-slate-400 mr-1">Tools:</span>
+                    {item.tools.map((t) => (
+                      <span
+                        key={t}
+                        className="px-2.5 py-0.5 rounded-md text-[11px] font-mono font-semibold bg-pink-50 text-[#A21CAF] border border-pink-200"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
 
               </div>
             </div>

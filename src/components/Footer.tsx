@@ -15,7 +15,6 @@ export const Footer: React.FC = () => {
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Certifications', href: '#certifications' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -70,7 +69,7 @@ export const Footer: React.FC = () => {
               </h4>
               <div className="flex items-center gap-2">
                 <a
-                  href="https://github.com/example-username"
+                  href="https://github.com/wey02"
                   target="_blank"
                   rel="noreferrer"
                   id="footer-github-link"
@@ -81,7 +80,7 @@ export const Footer: React.FC = () => {
                   <span className="sr-only">GitHub</span>
                 </a>
                 <a
-                  href="https://linkedin.com/in/example-username"
+                  href="https://www.linkedin.com/in/jewelle-joy-vergara-a97a4b339"
                   target="_blank"
                   rel="noreferrer"
                   id="footer-linkedin-link"
@@ -116,13 +115,11 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 font-mono">
+        <div className="pt-8 flex flex-col items-center justify-between gap-4 text-xs text-slate-500 font-mono">
           <p>
-            © {new Date().getFullYear()} {developerProfile.name}. Built with React, TypeScript & Tailwind CSS.
+            © {new Date().getFullYear()} {developerProfile.name}.
           </p>
-          <p className="flex items-center gap-1 text-[11px] text-[#A21CAF]">
-            Feminine Futuristic • High Performance & Clean Architecture
-          </p>
+         
         </div>
 
       </div>

@@ -14,7 +14,7 @@ import {
   AlertCircle,
   ArrowUpRight
 } from 'lucide-react';
-import { developerProfile, socialLinks } from '../data/portfolioData';
+import { developerProfile } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -28,6 +28,7 @@ export const Contact: React.FC = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(developerProfile.email);
@@ -53,14 +54,36 @@ export const Contact: React.FC = () => {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // Simulate realistic asynchronous network submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    setSubmitError('');
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${developerProfile.email}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          inquiryType: formData.inquiryType,
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          _subject: `[Portfolio] ${formData.subject.trim()}`,
+          _template: 'table',
+          _honey: ''
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('The message service returned an error.');
+      }
+
       setIsSubmitted(true);
       setFormData({
         name: '',
@@ -69,7 +92,11 @@ export const Contact: React.FC = () => {
         inquiryType: 'Full-Time Opportunity',
         message: ''
       });
-    }, 900);
+    } catch {
+      setSubmitError('Your message could not be sent. Please try again or use the direct email link.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -90,7 +117,7 @@ export const Contact: React.FC = () => {
             Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C026D3] via-[#D946EF] to-[#EC4899]">High-Impact</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            Whether you are recruiting for a full-time engineering role, building an AI-powered SaaS product, or need architecture consulting — my inbox is open.
+           Open to engineering roles, AI projects, and opportunities to build something meaningful. Feel free to reach out.
           </p>
         </div>
 
@@ -146,7 +173,7 @@ export const Contact: React.FC = () => {
             {/* Quick Details & Response Time */}
             <div className="bg-white rounded-2xl border border-pink-200/80 p-6 space-y-4 shadow-xs">
               <h3 className="text-sm font-bold text-slate-900 font-mono uppercase tracking-wider">
-                Availability & Logistics
+                Availability
               </h3>
               
               <div className="space-y-3 text-xs sm:text-sm text-slate-700">
@@ -158,10 +185,7 @@ export const Contact: React.FC = () => {
                   <MapPin className="w-4 h-4 text-[#EC4899] shrink-0" />
                   <span>{developerProfile.location}</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Sparkles className="w-4 h-4 text-[#D946EF] shrink-0" />
-                  <span className="text-[#A21CAF] font-semibold">{developerProfile.availability}</span>
-                </div>
+                
               </div>
             </div>
 
@@ -184,7 +208,7 @@ export const Contact: React.FC = () => {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/example-username"
+                  href="https://www.linkedin.com/in/jewelle-joy-vergara-a97a4b339"
                   target="_blank"
                   rel="noreferrer"
                   id="connect-linkedin-btn"
@@ -207,9 +231,9 @@ export const Contact: React.FC = () => {
                   <div className="w-14 h-14 mx-auto rounded-full bg-pink-50 text-[#D946EF] border border-pink-200 flex items-center justify-center shadow-md">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900">Message Dispatched!</h3>
+                  <h3 className="text-2xl font-bold text-slate-900">Message Sent!</h3>
                   <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
-                    Thank you for reaching out. Your message has been recorded and routed directly to my inbox. I will review and reply within 24 hours.
+                    Thank you for reaching out. Your message was sent directly to {developerProfile.email}. I will review it and reply within 24 hours.
                   </p>
                   <div className="pt-4">
                     <button
@@ -355,18 +379,25 @@ export const Contact: React.FC = () => {
                     )}
                   </div>
 
+                  {submitError && (
+                    <p className="text-xs text-rose-600 flex items-center gap-1.5" role="alert">
+                      <AlertCircle className="w-3.5 h-3.5 shrink-0" />
+                      <span>{submitError}</span>
+                    </p>
+                  )}
+
                   {/* Submit Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={isSubmitting}
                       id="contact-submit-btn"
-                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#C026D3] to-[#EC4899] hover:from-[#D946EF] hover:to-[#F43F5E] transition-all shadow-md shadow-pink-500/20 active:scale-98 disabled:opacity-60 cursor-pointer"
+                      className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#C026D3] to-[#EC4899] hover:from-[#D946EF] hover:to-[#F43F5E] transition-all shadow-md shadow-pink-500/20 active:scale-98 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"></div>
-                          <span>Transmitting Message...</span>
+                          <div className="w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin" />
+                          <span>Sending Message...</span>
                         </>
                       ) : (
                         <>

@@ -15,6 +15,7 @@ export interface Project {
   targetAudience?: string; // e.g. 'Enterprise Risk & Compliance Teams', 'Distributed Engineering Teams'
   purpose: string; // Why application was created & problem it solves
   myRole: string; // Developer's specific role and architectural contribution
+  outcome: string; // Result or impact delivered by the project
   keyFeatures: string[];
   technologies: string[];
   category: ProjectCategory;
@@ -41,21 +42,6 @@ export interface SkillGroup {
   subtitle: string;
   iconName: string;
   skills: SkillItem[];
-}
-
-export interface Certification {
-  id: string;
-  title: string;
-  issuer: string;
-  issueDate: string;
-  credentialId: string;
-  credentialUrl: string;
-  status: 'Active' | 'Verified';
-  badgeColor?: string;
-  description: string;
-  skillsCovered: string[];
-  imageUrl?: string;
-  type?: 'certification' | 'seminar';
 }
 
 export interface SocialLink {

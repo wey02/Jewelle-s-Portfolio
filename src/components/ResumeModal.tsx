@@ -1,6 +1,6 @@
 import React from 'react';
 import { X, Printer, Mail, MapPin, Globe } from 'lucide-react';
-import { developerProfile, skillsData, experienceData, certificationsData } from '../data/portfolioData';
+import { developerProfile, skillsData, experienceData } from '../data/portfolioData';
 
 interface ResumeModalProps {
   isOpen: boolean;
@@ -28,23 +28,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handlePrint}
-              id="resume-print-btn"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-200 bg-pink-50 dark:bg-[#1F0A30] hover:bg-pink-100 dark:hover:bg-[#2A0D3B] border border-pink-200 dark:border-[#3B134A] transition-colors"
-            >
-              <Printer className="w-3.5 h-3.5 text-[#D946EF]" />
-              <span>Print / PDF</span>
-            </button>
-            <button
-              onClick={onClose}
-              id="resume-close-btn"
-              className="p-1.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-pink-50 dark:hover:bg-[#1F0A30] transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+          
         </div>
 
         {/* Printable Resume Sheet */}
@@ -115,21 +99,6 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                       <li key={hIdx}>{hl}</li>
                     ))}
                   </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Certifications */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#A21CAF] dark:text-[#F0ABFC] font-mono mb-3">
-              Verified Certifications
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-              {certificationsData.map((cert) => (
-                <div key={cert.id} className="p-3.5 rounded-xl border border-pink-200/70 dark:border-[#3B134A] bg-pink-50/30 dark:bg-[#180C26]">
-                  <div className="font-bold text-slate-900 dark:text-white">{cert.title}</div>
-                  <div className="text-slate-500 dark:text-slate-400 font-mono text-[11px] mt-0.5">{cert.issuer} • {cert.issueDate}</div>
                 </div>
               ))}
             </div>

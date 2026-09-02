@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
-import { Certifications } from './components/Certifications';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ResumeModal } from './components/ResumeModal';
@@ -14,7 +13,7 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   useEffect(() => {
-    const sections = ['about', 'projects', 'skills', 'experience', 'certifications', 'contact'];
+    const sections = ['about', 'projects', 'skills', 'experience', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
@@ -54,9 +53,6 @@ export default function App() {
 
         {/* Experience Timeline Section */}
         <Experience />
-
-        {/* Certifications Section */}
-        <Certifications />
 
         {/* Contact & Social Section */}
         <Contact />

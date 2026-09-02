@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   return (
     <section
       id="about"
-      className="pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden relative"
+      className="pt-28 md:pt-36 overflow-hidden relative"
     >
       {/* Background futuristic rose-violet ambient glow and subtle mesh grid */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_70%_50%_at_50%_-10%,rgba(217,70,239,0.12),transparent_70%)]"></div>
@@ -145,18 +145,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               <div className="relative bg-white p-3 rounded-3xl border border-pink-200/90 shadow-[0_12px_45px_rgba(217,70,239,0.18)] overflow-hidden">
                 <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden bg-pink-50">
                   <img
-                    src="/src/assets/images/engineer_portrait_1787577008475.jpg"
+                    src="/src/assets/images/Jew.jpg"
                     alt="Jewelle - Professional Full-Stack & AI Systems Developer"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center transform hover:scale-102 transition-transform duration-500"
                   />
-                  {/* Subtle inner gradient overlay at bottom */}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 via-black/20 to-transparent flex items-end p-4">
-                    <div className="text-white">
-                      <p className="text-sm font-bold tracking-tight">Jewelle</p>
-                      <p className="text-xs text-pink-200 font-medium">Full-Stack & AI Systems Developer</p>
-                    </div>
-                  </div>
+                 
                 </div>
 
                 {/* Floating Experience Badge */}
@@ -165,37 +159,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   <span className="text-xs font-semibold text-slate-800">Open to Work</span>
                 </div>
 
-                {/* Floating Tech Stack Badge */}
-                <div className="absolute bottom-6 right-6 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-pink-200 shadow-lg flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-[#D946EF]" />
-                  <span className="text-xs font-semibold text-slate-800">React • Python • AI</span>
-                </div>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Highlight Stats / Metrics Ribbon */}
-        <div className="mt-14 pt-8 border-t border-pink-100 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="bg-white p-4 rounded-2xl border border-pink-100 shadow-2xs">
-            <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#C026D3] to-[#EC4899] bg-clip-text text-transparent">{developerProfile.yearsOfExperience}</div>
-            <div className="text-xs sm:text-sm font-medium text-slate-600 mt-1">Years Building Software</div>
-          </div>
-          <div className="bg-white p-4 rounded-2xl border border-pink-100 shadow-2xs">
-            <div className="text-2xl sm:text-3xl font-bold text-[#EC4899]">{developerProfile.projectsCompleted}</div>
-            <div className="text-xs sm:text-sm font-medium text-slate-600 mt-1">Web Apps & Deliverables</div>
-          </div>
-          <div className="bg-white p-4 rounded-2xl border border-pink-100 shadow-2xs">
-            <div className="text-2xl sm:text-3xl font-bold text-[#8B5CF6]">{developerProfile.aiPipelinesBuilt}</div>
-            <div className="text-xs sm:text-sm font-medium text-slate-600 mt-1">AI / LLM Pipelines Deployed</div>
-          </div>
-          <div className="bg-white p-4 rounded-2xl border border-pink-100 shadow-2xs">
-            <div className="text-2xl sm:text-3xl font-bold text-emerald-600">{developerProfile.uptimeReliability}</div>
-            <div className="text-xs sm:text-sm font-medium text-slate-600 mt-1">Target Service Reliability</div>
-          </div>
-        </div>
-
+    
       </div>
     </section>
   );
