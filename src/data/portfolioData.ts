@@ -23,7 +23,8 @@ export const developerProfile: DeveloperProfile = {
   yearsOfExperience: '1',
   projectsCompleted: '4',
   uptimeReliability: '99.9%',
-  aiPipelinesBuilt: '14+'
+  aiPipelinesBuilt: '14+',
+
 };
 
 export const projectCategories = [
@@ -37,7 +38,7 @@ export const projectsData: Project[] = [
   {
     id: 'project 1',
     title: 'Automated Events Crowd Management System Using YOLO and Deep Sort Algorithm',
-    projectType: 'AI Web Application',
+    projectType: 'Academic Project - Thesis',
     purpose: 'Event organizers often rely on manual crowd counting, making it difficult to maintain an accurate view of facility occupancy. Our team developed a system that monitors attendance in real time and alerts administrators when the venue reaches its configured capacity.',
     myRole: "I developed the web application and system integration, including the JavaScript frontend, Flask backend, MySQL database, REST APIs, authentication, administrator dashboard, and WebSocket-based real-time updates.I also collaborated with the team responsible for the YOLO and DeepSORT computer vision component, contributed to dataset annotation, and integrated its occupancy data into the web application.",
 
